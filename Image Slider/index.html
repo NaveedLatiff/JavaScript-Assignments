@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image SLider</title>
+    <style>
+        .container{
+            height: 96vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .img-cont{
+            height:300px;
+            width: 500px;
+            border: 2px solid black;
+            margin-bottom: 20px;
+            display: flex;
+            overflow: hidden;
+            position: relative;
+ 
+        }
+        button{
+            cursor: pointer;
+        }
+        img{
+            width: 500px;
+        }
+        p{
+            position: absolute;
+            top: 105px;
+            right: 245px;
+            font-size:30px ;
+            color: white;
+            font-weight: bolder;
+        }
+        button{
+            padding: 8px 15px;
+            background-color:black;
+            color: white;
+            border: none;
+            border-radius: 7px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="img-cont">
+            <img src="" >
+            <p></p>
+        </div>
+        <div>
+            <button onclick="next()">Next</button>
+            <button onclick="prev()">Previous</button>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="app.js"></script>
+</body>
+</html>

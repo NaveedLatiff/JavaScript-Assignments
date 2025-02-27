@@ -1,0 +1,50 @@
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    background-color:rgb(0,0,33);
+    color:white;
+    font-family:Poppins;
+}
+h1{
+    text-align:center;
+    margin-top: 30px;
+    font-size:35px;
+}
+#score{
+    text-align: center;
+    margin-top: 100px;
+    font-size: 40px;
+}
+#score span{
+    color:orange;
+}
+.button-cont{
+    text-align:center;
+    margin-top:50px;
+}
+#restart{
+    padding: 10px 40px;
+    font-size: 17px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+#restart:hover{
+    cursor: pointer;
+    border: 2px solid white;
+}
+#result{
+    padding: 10px 40px;
+    font-size: 17px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+#result:hover{
+    cursor: pointer;
+    border: 2px solid white;
+}

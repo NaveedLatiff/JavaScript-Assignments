@@ -1,0 +1,114 @@
+ .resultsPage{
+    display:none;
+}
+ 
+body{
+    background-color: rgb(0,0,33);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    /* height:100vh; */
+    /* overflow-y: hidden; */
+
+}
+h1{
+    text-align: center;
+   
+}
+h1 span{
+    color: orange;
+}
+.timer{
+    color: orange;
+    position: absolute;
+    top: 26px;
+    right: 0;
+
+}
+.main-cont{
+
+    display: flex;
+    justify-content: center;
+    margin-top:60px ;
+   
+  
+}
+.main{
+    background-color: rgba(255, 255, 255, 0.295);
+    color: white;
+    height: 300px;
+    width: 530px;
+    border-radius:8px;
+    font-size: 1rem;
+    display: flex;
+    flex-direction:column ;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+button{
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: blue;
+    color: white;
+    box-shadow: 1px 1px 9px white;
+    font-size: 1rem;
+}
+.showScore{
+    text-align: center;
+    font-size: 2rem;
+}
+input:hover,label:hover,button:hover{
+    cursor: pointer;
+}
+.center-btn{
+   display: flex;
+   gap: 20px;
+   justify-content: center;
+   margin-top: 100px;
+}
+#restart{
+    display: none;
+    box-shadow: 0px 0px 0px;
+    background-color: green;
+}
+#results{
+    background-color: green;
+    display: none;
+    box-shadow: 0px 0px 0px;
+}
+.resultsPage{
+    text-align: center;
+}
+.resultsPage h4{
+    font-size: 2rem;
+
+}
+.resultsPage h4 span{
+    color: orange;
+}
+.resultsPage p{
+    font-size: 1.2rem;
+}
+.resultsPage .Answer{
+    color: green;
+}
+#logout{
+    background-color: red;
+    box-shadow: 0px 0px 0px;
+
+}
+@media (max-width:550px){
+    .main{
+        width:430px;
+        font-size: 13px;
+    }
+}
+@media (max-width:450px){
+    .main{
+        width:350px;
+        font-size: 10px;
+    }
+}

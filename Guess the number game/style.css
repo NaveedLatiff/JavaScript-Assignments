@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+.img-cont{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: black;
+    margin-top: 100px;
+}
+.decider-cont{
+    margin-top: 50px;
+    text-align: center;
+}
+.decider{
+    background-color: black;
+    color: white;
+    padding: 10px;
+}

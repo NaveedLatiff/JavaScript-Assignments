@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            margin-top: 35vh;
+        }
+        .stopWatch{
+            border: 2px solid black;
+           display: flex;
+           flex-direction: column; 
+           height: 30vh;
+            width: 50vw;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            background-color: rgb(0,0,0,0.8);
+            color: white;
+        }
+        .buttons{
+            /* border: 2px solid black; */
+            display: flex;
+            gap: 30px;
+        }
+        button{
+            padding:10px 30px;
+            border-radius: 8px;
+            border: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .timer{
+            font-size: larger;
+        }
+        button:hover{
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="stopWatch">
+    <div class="timer">00:00:00</div>
+    
+    <div class="buttons">
+    <button id="pause" onclick="pause()">Pause</button>
+    <button id="start" onclick="start()">Start</button>
+    <button id="reset" onclick="reset()">Reset</button>
+</div>
+</div>
+  
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="cont">
+        <div id="logout-cont">
+        <a href="../Login Page/login.html">
+        <button id="logout">Log Out</button></a>
+        </div>
+        <h1><span>Quiz</span> App</h1>
+        <p class="timer"></p>
+        <div class="main-cont">
+            <div class="main">
+                <p id="ques"></p>
+                <br>
+                <div>
+                    <input  type="radio" value="1" name="named" id="one">
+                    <label for="one" id="opt1"></label>
+                </div>
+                <br>
+                <div>
+                    <input   type="radio" value="2" name="named" id="two">    
+                    <label for="two" id="opt2"></label>
+                </div>
+                <br>
+                <div>    
+                    <input  type="radio" value="3" name="named" id="three">
+                    <label for="three" id="opt3"></label>
+                </div>
+                <br><br><br>
+                <button id="next" disabled>Next</button>
+            </div>
+        </div>
+    <p class="showScore"></p>
+    <div class="center-btn">
+        <button  id="restart">Restart</button>
+        <button id="results">Correct Answers</button>
+    </div>
+    <div class="resultsPage">
+        <h4>The <span>Answers</span> Of All Questions</h4>
+        <div>
+            <p id="Q1" ></p>
+            <p class="Answer" id="Ans1"></p>
+        </div>
+        <div>
+            <p id="Q2" ></p>
+            <p class="Answer" id="Ans2"></p>
+        </div>
+        <div>
+            <p id="Q3" ></p>
+            <p class="Answer" id="Ans3"></p>
+        </div>
+        <div>
+            <p id="Q4" ></p>
+            <p class="Answer" id="Ans4"></p>
+        </div><div>
+            <p id="Q5" ></p>
+            <p class="Answer" id="Ans5"></p>
+        </div><div>
+            <p id="Q6" ></p>
+            <p class="Answer" id="Ans6"></p>
+        </div>
+    </div>
+    </div>
+    <br>
+    <br>
+    
+    <script src="main.js"></script>
+</body>
+</html>

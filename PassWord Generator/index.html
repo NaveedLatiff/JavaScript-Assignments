@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(0,0,33);
+            color: white;
+            display: flex;
+
+            justify-content: center;
+        }
+        div {
+            height: 400px;
+            width: 600px;
+            /* border: 2px solid white; */
+            box-shadow: 0px 0px 6px;
+            margin-top: 130px;
+            padding: 20px;
+
+        }
+        div span{
+            color: orange;
+        }
+        .inp-field{
+            display: inline-block;
+            background-color: white;
+            height: 40px ;
+            overflow: hidden;
+            position:relative;
+            /* border: 2px solid red; */
+
+            
+        }
+        .inp{
+            height: 100%;
+            border: none;
+            outline: none;
+            font-size: 17px;
+            /* border: 2px solid red; */
+            
+        }
+        img{
+            position: relative;
+            margin-top: 12px;
+            /* border: 2px solid black; */
+        }
+        button{
+            background-color: green;
+            display: block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <h1>Random Password <span>Generator</span></h1>
+        <span class="inp-field">
+            <input type="text" class="inp">
+            <img src="copy.svg" class="copy">
+
+        </span>
+        <button class="generator">Generate Password</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

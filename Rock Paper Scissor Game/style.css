@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.img-cont{
+    display: flex;
+    /* align-items: center; */
+    /* border: 2px solid black; */
+    justify-content: center;
+    /* align-items: center; */
+    gap: 40px;
+    margin-top: 20px;
+    /* background-color: black; */
+}
+img{
+    height: 120px;
+    width: 120px;
+    object-fit: contain;
+    border-radius: 60px;
+    background-color: black;
+}
+h1{
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+.scorecard{
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+    /* border: 2px solid black */
+}
+.userscore{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.compscore{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.decider{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.showwinner{
+    padding: 20px;
+    border-radius:8px;
+    background-color: blue;
+    color: white;
+    border: none;
+}
+img:hover{
+    border: 2px solid black;
+}
