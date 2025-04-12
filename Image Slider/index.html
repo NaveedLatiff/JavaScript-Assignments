@@ -1,67 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image SLider</title>
+    <title>Image Slider</title>
     <style>
-        .container{
-            height: 96vh;
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        .slides-container {
+            position: relative;
+            width: 800px;
+            background-color: white;
+            height: 350px;
+            border: 2px solid white;
+        }
+
+        .slides-container .slides {
+            width: 100%;
+            height: calc(100% - 40px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides-container .slides img {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            object-fit: cover;
+        }
+
+        .buttons {
+            color: #eee;
+            position: absolute;
+            z-index: 1;
+            transition: 0.5s;
+            width: 800px;
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 24px;
+            user-select: none;
+        }
+
+        .next,
+        .prev {
+            padding: 0px 10px;
+            cursor: pointer;
+            height: 40px;
+            display: flex;
             justify-content: center;
             align-items: center;
         }
-        .img-cont{
-            height:300px;
-            width: 500px;
-            border: 2px solid black;
-            margin-bottom: 20px;
-            display: flex;
-            overflow: hidden;
-            position: relative;
- 
+
+        .next:hover,
+        .prev:hover {
+            background-color: rgb(0, 0, 0, 0.3);
         }
-        button{
-            cursor: pointer;
+
+        .slides img:not(.active) {
+            left: -100%;
         }
-        img{
-            width: 500px;
-        }
-        p{
+
+        .dotsContainer {
             position: absolute;
-            top: 105px;
-            right: 245px;
-            font-size:30px ;
-            color: white;
-            font-weight: bolder;
+            top: 72%;
+            display: flex;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 2
         }
-        button{
-            padding: 8px 15px;
-            background-color:black;
-            color: white;
-            border: none;
-            border-radius: 7px;
+
+        .dotsContainer .dot {
+            border: 1px solid rgba(0, 0, 0, 0.192);
+            border-radius: 50%;
+            display: inline-block;
+            height: 7px;
+            width: 7px;
+        }
+
+        .dotsContainer .active {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        @keyframes next1 {
+            from {
+                left: 0%;
+
+            }
+
+            to {
+                left: -100%
+            }
+        }
+
+        @keyframes next2 {
+            from {
+                left: 100%;
+
+            }
+
+            to {
+                left: 0%
+            }
+        }
+
+        @keyframes prev1 {
+            from {
+                left: 0%;
+            }
+
+            to {
+                left: 100%
+            }
+        }
+
+        @keyframes prev2 {
+            from {
+                left: -100%;
+
+            }
+
+            to {
+                left: 0%
+            }
+        }
+
+        @media (max-width:900px) {
+
+            .slides-container,
+            .buttons {
+                width: 700px;
+            }
+        }
+
+        @media (max-width:750px) {
+
+            .slides-container,
+            .buttons {
+                width: 600px;
+            }
+        }
+
+        @media (max-width:650px) {
+
+            .slides-container,
+            .buttons {
+                width: 500px;
+                height: 300px;
+            }
+
+            .buttons {
+                top: 45%;
+            }
+
+            .dotsContainer {
+                top: 69%;
+            }
+        }
+
+        @media (max-width:550px) {
+
+            .slides-container,
+            .buttons {
+                width: 350px;
+                height: 250px;
+            }
+
+            .dotsContainer {
+                top: 65%;
+            }
         }
     </style>
-
 </head>
+
 <body>
-    <div class="container">
-        <div class="img-cont">
-            <img src="" >
-            <p></p>
-        </div>
-        <div>
-            <button onclick="next()">Next</button>
-            <button onclick="prev()">Previous</button>
+    <div class="slides-container">
+        <div class="slides">
+            <img class="active" src="./img/img-1.jpg">
+            <img src="./img/img-2.jpg">
+            <img src="./img/img-3.jpg">
         </div>
     </div>
+    <div class="buttons">
+        <span class="prev">&#10094</span>
+        <span class="next">&#10095</span>
+    </div>
 
+    <div class="dotsContainer">
+        <div class="dot active" onclick="switchmage(this)" attr="0"></div>
+        <div class="dot" onclick="switchmage(this)" attr="1"></div>
+        <div class="dot" onclick="switchmage(this)" attr="2"></div>
 
+    </div>
+    <script>
+        let img = document.querySelectorAll("img")
+        let next = document.querySelector(".next")
+        let prev = document.querySelector(".prev")
+        let i = 0
+        let slideNext = () => {
+            img[i].style.animation = 'next1 0.5s ease-in forwards'
+            if (i >= img.length - 1) {
+                i = 0
+            }
+            else {
+                i++
+            }
 
+            img[i].style.animation = 'next2 0.5s ease-in forwards'
+            indicators()
+            clearInterval(deleteInterval)
+        }
+        next.addEventListener("click", slideNext)
 
+        let slidePrev = () => {
+            img[i].style.animation = 'prev1 0.5s ease-in forwards'
+            if (i == 0) {
+                i = img.length - 1
+            }
+            else {
+                i--
+            }
+            img[i].style.animation = 'prev2 0.5s ease-in forwards'
+            indicators()
+            clearInterval(deleteInterval)
 
-    <script src="app.js"></script>
+        }
+        prev.addEventListener("click", slidePrev)
+
+        let autoSliding = () => {
+            let timer = () => {
+                slideNext()
+                indicators()
+            }
+            deleteInterval = setInterval(timer, 2000)
+        }
+        autoSliding()
+
+        let container = document.querySelector(".slides-container")
+        container.addEventListener("mouseover", () => {
+            clearInterval(deleteInterval)
+        })
+        container.addEventListener("mouseout", autoSliding)
+        container.addEventListener("touchstart", () => {
+            clearInterval(deleteInterval);
+        });
+        container.addEventListener("touchend", autoSliding);
+
+        let dots = document.querySelectorAll(".dot")
+        let indicators = () => {
+            dots.forEach(dot => dot.classList.remove("active"))
+            dots[i].classList.add("active")
+        }
+
+        window.switchmage = (currImage) => {
+    let imgAttr = currImage.getAttribute('attr');
+    if (imgAttr > i) {
+        img[i].style.animation = 'next1 0.5s ease-in forwards';
+        i = imgAttr;
+        img[i].style.animation = 'next2 0.5s ease-in forwards';
+    } else if (imgAttr == i) return;
+    else {
+        img[i].style.animation = 'prev1 0.5s ease-in forwards';
+        i = imgAttr;
+        img[i].style.animation = 'prev2 0.5s ease-in forwards';
+    }
+    clearInterval(deleteInterval)
+    indicators();
+}
+
+    </script>
 </body>
+
 </html>
